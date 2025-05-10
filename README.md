@@ -23,7 +23,7 @@ Follow these steps to set up Ideya Notes locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/ideya-notes.git
+   git clone https://github.com/CodeByMed/ideya-notes.git
    ```
 2. Navigate to the project directory:
    ```bash
