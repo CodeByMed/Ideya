@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ideya - Notes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Form -->
+    <div id="login-container">
+        <h1>Welcome to ideya</h1>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Enter your username" required>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" id="create-account-link">Create one</a></p>
+    </div>
+
+    <!-- Create Account Form -->
+    <div id="create-account-container" class="hidden">
+        <h1>Create Account</h1>
+        <form id="create-account-form">
+            <input type="text" id="new-username" placeholder="Choose a username" required>
+            <input type="password" id="new-password" placeholder="Choose a password" required>
+            <button type="submit">Create Account</button>
+        </form>
+        <p>Already have an account? <a href="#" id="back-to-login-link">Back to login</a></p>
+    </div>
+
+    <!-- Notes App Interface -->
+    <div id="tools-sidebar" class="collapsed">
+        <div id="tools-content">
+            <h2>Tools</h2>
+            <button id="bold-button" title="Bold"><b>B</b></button>
+            <button id="underline-button" title="Underline"><u>U</u></button>
+            <button id="clear-formatting-button" title="Clear Formatting">Clear</button>
+            <input type="color" id="color-picker" title="Text Color">
+            <label for="font-select">Font:</label>
+            <select id="font-select" title="Select Font">
+                <option value="Poppins">Poppins</option>
+                <option value="Arial">Arial</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Times New Roman">Times New Roman</option>
+            </select>
+            <select id="font-weight-select" title="Font Weight">
+                <option value="normal">Normal</option>
+                <option value="bold">Bold</option>
+                <option value="lighter">Lighter</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="300">300</option>
+                <option value="400">400</option>
+                <option value="500">500</option>
+                <option value="600">600</option>
+                <option value="700">700</option>
+                <option value="800">800</option>
+                <option value="900">900</option>
+            </select>
+            <input type="color" id="background-color-picker" title="Background Color">
+            <select id="emoji-picker" title="Pick an Emoji">
+                <option value="😊">😊</option>
+                <option value="😀">😀</option>
+                <option value="😂">😂</option>
+                <option value="😍">😍</option>
+                <option value="😎">😎</option>
+                <option value="👍">👍</option>
+                <option value="🎉">🎉</option>
+                <option value="custom">➕</option>
+            </select>
+        </div>
+    </div>
+    <button id="toggle-sidebar-button" title="Toggle Sidebar">&gt;</button>
+    <div id="app-container" class="hidden">
+        <header>
+            <h1>ideya Notes</h1>
+            <div id="header-tools">
+                <button id="logout-button" title="Logout">Logout</button>
+            </div>
+        </header>
+        <div id="notes-container">
+            <h1 id="no-notes-message">No Notes here. Create some!</h1>
+        </div>
+        <div id="note-input-container">
+            <input id="note-input" type="text" placeholder="Write your note here...">
+            <button id="add-note-button">Create</button>
+        </div>
+    </div>
+
+    <div id="notification"></div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,549 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f9f4; /* Light green background */
+}
+
+/* Login and Create Account Forms */
+#login-container, #create-account-container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+#login-form input, #create-account-form input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#login-form button, #create-account-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+}
+
+#login-form a, #create-account-form a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Notes App Interface */
+.hidden {
+    display: none;
+}
+
+#app-container {
+    width: 90%;
+    max-width: 900px;
+    background: #f9f9f4; /* Light yellow background */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 90vh;
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#header-tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#font-select {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#toolbar {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+
+/* Toolbar Buttons */
+#toolbar button {
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+#create-account-link{
+    text-decoration: solid;
+    color: rgb(28, 171, 111);
+}
+#toolbar button:hover {
+    background: #0056b3;
+    transform: scale(1.1);
+}
+
+#color-picker {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    padding: 0;
+}
+
+#emoji-picker {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+#emoji-picker option {
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+#emoji-picker:hover {
+    background-color: #f0f0f0;
+    border-color: #007bff;
+}
+
+/* Logout Button */
+#logout-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: #e40000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#logout-button:hover {
+    background-color: #a70202;
+    transform: scale(1.05);
+}
+
+#notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+#no-notes-message {
+    font-size: 1.5rem;
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#no-notes-message button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#no-notes-message button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Note Input */
+#note-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#note-input {
+    width: 70%;
+    max-width: 600px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 1rem;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+#note-input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+#add-note-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#add-note-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Notes */
+.note {
+    background: #f3e466; /* Light yellow */
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    width: 90%;
+    max-width: 800px;
+    margin: 10px auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.note-header .timestamp {
+    font-style: bold;
+}
+
+.note-header .delete-button {
+    background: #d90000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.note-header .delete-button:hover {
+    background: #b50101;
+}
+
+.note .color-picker {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.note .delete-button {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: #ff0202;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.note .delete-button:hover {
+    background: #cc0000;
+}
+
+/* Emoji Picker */
+#emoji-button {
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    background: #ffcc00;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#emoji-button:hover {
+    background: #e6b800;
+}
+
+/* Notifications */
+#notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#notification.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(10px);
+}
+
+/* Tools Sidebar */
+#tools-sidebar.hidden {
+    display: none;
+}
+
+#tools-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px; /* Reduced width */
+    background-color: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    transform: translateX(-200px); /* Adjusted for new width */
+    transition: transform 0.3s ease;
+    padding: 10px; /* Reduced padding */
+}
+
+#tools-sidebar.expanded {
+    transform: translateX(0);
+}
+
+#tools-sidebar.collapsed {
+    transform: translateX(-200px);
+}
+
+#tools-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Reduced gap for compactness */
+}
+
+/* Tools Buttons */
+#tools-content button {
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 10px; /* Reduced padding */
+    font-size: 0.9rem; /* Reduced font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#tools-content button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+#clear-formatting-button {
+    background: #ffcc00;
+    color: #333;
+}
+
+#clear-formatting-button:hover {
+    background: #e6b800;
+}
+
+#tools-sidebar.expanded + #app-container {
+    margin-left: 200px;
+}
+
+/* Styled Select Dropdown */
+select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background-color: #f9f9f9;
+    color: #333;
+    cursor: pointer;
+    width: 100%; /* Ensure it fits within the sidebar */
+}
+
+select:hover {
+    background-color: #f0f0f0;
+    border-color: #007bff;
+}
+
+/* Compact Color Picker */
+#color-picker, #background-color-picker {
+    width: 100%; /* Full width for better alignment */
+    height: 30px; /* Reduced height */
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  #app-container {
+    width: 90%;
+    max-width: 1000px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  #notes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .note {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    border-radius: 6px;
+  }
+  
+  #note-input-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  #note-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  #add-note-button {
+    padding: 10px 20px;
+    background-color: #3a8dff;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  #add-note-button:hover {
+    background-color: #307ae0;
+  }
+  
+  /* Sidebar */
+  #tools-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px; /* Reduced width */
+    height: 100%;
+    background-color: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    transform: translateX(-200px); /* Adjusted for new width */
+    transition: transform 0.3s ease;
+    padding: 10px; /* Reduced padding */
+  }
+  
+  #tools-sidebar.expanded {
+    transform: translateX(0);
+    overflow-y: auto; 
+  }
+  
+  #tools-sidebar.collapsed {
+    transform: translateX(-200px);
+  }
+  
+  /* Toggle Button – ohne Hover-Effekt */
+  #toggle-sidebar-button {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: #3a8dff;
+    border-radius: 40px;
+    color: white;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+/* Drag-and-Drop */
+.note.dragging {
+    opacity: 0.5;
+    border: 2px dashed #007bff;
+}
